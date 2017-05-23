@@ -4,7 +4,6 @@
 #include "Problema.h"
 #include <vector>
 
-
 class Solucion
 {
     private:
@@ -18,8 +17,11 @@ class Solucion
     ~Solucion();
     Solucion & operator=(const Solucion & s);
 
-    int getNumObjetos();
-    void addObjeto(int pos, int obj, double vol);
+    int getNumCajas();
+    void addObjeto(int pos, pair<int, double> obj);
+    void crearCaja(pair<int, double> obj);
     int getVolumen(int pos);
 
 };
+
+#endif
