@@ -9,7 +9,7 @@ class Solucion
 {
     private:
 
-    vector<vector<double> > posiciones;
+    vector<vector<pair<int,double> > > posiciones;
 
     public:
 
@@ -19,7 +19,7 @@ class Solucion
     Solucion & operator=(const Solucion & s);
 
     int getNumObjetos();
-    void addObjeto(int pos, double vol);
+    void addObjeto(int pos, int obj, double vol);
     int getVolumen(int pos);
 
 };
