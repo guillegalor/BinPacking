@@ -1,5 +1,4 @@
 #include "Algoritmos.h"
-//#include "Solucion.h"
 #include <iostream>
 #include <vector>
 
@@ -15,11 +14,12 @@ Solucion AlgorimoGreedyBinPacking(Problema p){
     candidatos[i].first = i;
     candidatos[i].second = p.getVolumen(i);
   }
+  // Añadimos la primera caja
+  S.addCaja();
 
   //Mientras queden objetos sin incluir en cajas
   while (!candidatos.empty()) {
-
-    //Funcion de seleccion(elemento con el máximo peso)
+    //Funcion de seleccion (elemento con el máximo volumen)
     vector<pair<int, double> >::iterator it, sol;
     pair<int, double> max(-1,0);
 
@@ -30,20 +30,23 @@ Solucion AlgorimoGreedyBinPacking(Problema p){
       }
     }
 
-    //Eliminacion del objeto elegido de la lista de candidatos
+    //Eliminamos el objeto elegido de la lista de candidatos
     candidatos.erase(sol);
 
     //Incluimos el objeto elegido en la solucion
-    for (int i = 0; i < S.getNumCajas(); i++) {
-      //Si el objeto entra en una caja existente, lo incluimos
-      if (S.getVolumen(i) + max.second <= p.getVolumen())
+    bool add = false;
+    for (int i = 0; i < S.getNumCajas() && !add; i++) {
+      //Si el objeto cabe en una caja existente, lo incluimos y salimos del bucle
+      if (S.getVolumen(i) + max.second <= p.getVolumen()){
         S.addObjeto(i,max);
-      //Si no, creamos una caja nueva con el el objeto
-      else
-        // Creamos una nueva caja
-        S.addCaja(max);
+        add = true;
+      }
     }
-
+    //Si no, creamos una caja nueva y añadimos el objeto
+    if(!add){
+      S.addCaja();
+      S.addObjeto(S.getNumCajas()-1, max);
+    }
   }
 
   return S;

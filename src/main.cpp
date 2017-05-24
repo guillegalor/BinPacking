@@ -14,16 +14,17 @@ int main() {
     if(!prob.cargarDesdeFlujo("Problema.dat"))
         cout << "El fichero no se puede abrir" << endl;
 
+    cout << "PROBLEMA: " << endl;
     prob.prettyPrint();
 
     // Resolvemos con algoritmo greedy
     sol = AlgorimoGreedyBinPacking(prob);
 
     // Mostramos la solución
+    cout << "\nSOLUCION: " << endl;
     vector<pair<int,double> > objetos;
     vector<pair<int,double> >::iterator it;
     cout << "Número de cajas -> " << sol.getNumCajas() << endl;
-    cout << "Volumen máximo de cada caja -> " << prob.getVolumen() << endl;
     cout << "Contenido de las cajas (objeto->volumen)" << endl;
     for(int i=0; i < sol.getNumCajas(); i++){
         cout << "Caja " << i << ": ";

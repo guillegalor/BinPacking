@@ -8,20 +8,15 @@ class Solucion
 {
     private:
 
-    vector<vector<pair<int,double> > > posiciones;
+    vector<vector<pair<int,double> > > posiciones;  // Vector de cajas
 
     public:
-/*
-    Solucion();
-    Solucion(const Solucion & s);
-    ~Solucion();
-    Solucion & operator=(const Solucion & s);
-*/
-    int getNumCajas();
-    void addCaja(pair<int, double> obj);
-    void addObjeto(int pos, pair<int, double> obj);
-    int getVolumen(int pos);
-    vector<pair<int, double> > getObjetos(int caja);
+
+    int getNumCajas();    // Devuelve el total de cajas usadas
+    void addCaja();       // Crea una nueva caja vacía
+    void addObjeto(int pos, pair<int, double> obj);   // Añade el objeto obj a la caja pos
+    double getVolumen(int pos);   // Devuleve el volumen ocupado en la caja pos
+    vector<pair<int, double> > getObjetos(int caja);    // Devuleve los objetos que hay en la caja
 
 };
 
