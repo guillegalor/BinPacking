@@ -111,3 +111,10 @@ bool Problema::cargarDesdeFlujo(const char *nombreFichero) {
 
     return true;
 }
+
+void Problema::prettyPrint(){
+  std::cout << "Volumen máximo de una caja: " << V << '\n';
+  for (size_t i = 0; i < N; i++) {
+    std::cout << "Objeto " << i << ": " << v[i] << '\n';
+  }
+}

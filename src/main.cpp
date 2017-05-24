@@ -14,6 +14,8 @@ int main() {
     if(!prob.cargarDesdeFlujo("Problema.dat"))
         cout << "El fichero no se puede abrir" << endl;
 
+    prob.prettyPrint();
+
     // Resolvemos con algoritmo greedy
     sol = AlgorimoGreedyBinPacking(prob);
 

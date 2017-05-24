@@ -22,6 +22,7 @@ class Problema {
     double getVolumen();
     double getVolumen(int i);
     bool cargarDesdeFlujo(const char *nombreFichero);
+    void prettyPrint();
 
 };
 

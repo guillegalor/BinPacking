@@ -18,6 +18,7 @@ class Solucion
     Solucion & operator=(const Solucion & s);
 */
     int getNumCajas();
+    void addCaja(pair<int, double> obj);
     void addObjeto(int pos, pair<int, double> obj);
     int getVolumen(int pos);
     vector<pair<int, double> > getObjetos(int caja);

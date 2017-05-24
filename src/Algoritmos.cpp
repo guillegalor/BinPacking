@@ -41,8 +41,7 @@ Solucion AlgorimoGreedyBinPacking(Problema p){
       //Si no, creamos una caja nueva con el el objeto
       else
         // Creamos una nueva caja
-        candidatos.resize(candidatos.size()+1);
-        candidatos.push_back(max);
+        S.addCaja(max);
     }
 
   }
