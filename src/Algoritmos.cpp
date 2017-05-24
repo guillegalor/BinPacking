@@ -1,19 +1,14 @@
 #include "Algoritmos.h"
+//#include "Solucion.h"
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-//Funcion de seleccion
-pair<int, double> getMax(vector<pair<int,double> > candidatos){
-
-
-  return max;
-}
 
 Solucion AlgorimoGreedyBinPacking(Problema p){
   Solucion S;
-  vector<pair<int,double> > candidatos(p.getNumObjetos);
+  vector<pair<int,double> > candidatos(p.getNumObjetos());
 
   //Inicializamos lista de candidatos
   for (int i = 0; i < p.getNumObjetos(); i++) {
@@ -39,13 +34,15 @@ Solucion AlgorimoGreedyBinPacking(Problema p){
     candidatos.erase(sol);
 
     //Incluimos el objeto elegido en la solucion
-    for (int i = 0; i < S.getNumCajas; i++) {
+    for (int i = 0; i < S.getNumCajas(); i++) {
       //Si el objeto entra en una caja existente, lo incluimos
-      if (S.getVolumen(i) + max.second <= p.getVolumen()))
-        S.addObjeto(max);
+      if (S.getVolumen(i) + max.second <= p.getVolumen())
+        S.addObjeto(i,max);
       //Si no, creamos una caja nueva con el el objeto
       else
-        S.crearCaja(max);
+        // Creamos una nueva caja
+        candidatos.resize(candidatos.size()+1);
+        candidatos.push_back(max);
     }
 
   }

@@ -11,16 +11,16 @@ class Solucion
     vector<vector<pair<int,double> > > posiciones;
 
     public:
-
+/*
     Solucion();
     Solucion(const Solucion & s);
     ~Solucion();
     Solucion & operator=(const Solucion & s);
-
+*/
     int getNumCajas();
     void addObjeto(int pos, pair<int, double> obj);
-    void crearCaja(pair<int, double> obj);
     int getVolumen(int pos);
+    vector<pair<int, double> > getObjetos(int caja);
 
 };
 
